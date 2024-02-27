@@ -7,6 +7,8 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "lint": "turbo run lint",
+    "migrate": "turbo run migrate",
+    "generate": "turbo run generate",
     "gen:cti": "turbo run gen:cti",
     "gen": "bun run -b plop --plopfile generate/config.ts"
   },

@@ -4,11 +4,13 @@
   "main": "index.ts",
   "module": "index.ts",
   "scripts": {
-    "start": "bun scripts/start.ts",
+    "start": "bun run migrate && bun scripts/start.ts",
     "dev": "bun --hot scripts/start.ts",
     "check": "tsc",
     "lint": "bun run check && eslint . --fix --ext ts,tsx --report-unused-disable-directives",
-    "prisma": "bun x prisma"
+    "prisma": "bun x prisma",
+    "generate": "bun x prisma generate",
+    "migrate": "bun x prisma migrate deploy"
   },
   "devDependencies": {
     "@types/bun": "latest",
