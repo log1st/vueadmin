@@ -1,0 +1,29 @@
+{
+  "name": "@vueadmin/root",
+  "module": "index.ts",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "gen:cti": "turbo run gen:cti",
+    "gen": "bun run -b plop --plopfile generate/config.ts"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@vueadmin/eslint-config": "workspace:*",
+    "bun-types": "latest",
+    "husky": "^9.0.11",
+    "turbo": "^1.12.4",
+    "plop": "^4.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

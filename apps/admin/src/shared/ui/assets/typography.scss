@@ -1,0 +1,7 @@
+@import "functions";
+
+@mixin t($ff, $fs: 16, $lh: auto, $fw: 400, $ls: 0) {
+  font: $fw rm($fs) $ff;
+  line-height: rm($lh);
+  letter-spacing: rm($ls);
+}

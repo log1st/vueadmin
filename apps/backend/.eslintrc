@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": ["@vueadmin/eslint-config"],
+  "env": {
+    "browser": false,
+    "es2020": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": [0]
+  }
+}

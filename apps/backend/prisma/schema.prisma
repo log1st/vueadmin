@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "bun x zod-prisma-types"
+
+  output                           = "../src/zod"
+  useMultipleFiles                 = true
+  writeBarrelFiles                 = true
+  createInputTypes                 = true
+  createModelTypes                 = true
+  addInputTypeValidation           = true
+  addIncludeType                   = true
+  addSelectType                    = true
+  validateWhereUniqueInput         = true
+  createOptionalDefaultValuesTypes = true
+  createRelationValuesTypes        = true
+  createPartialTypes               = true
+  useDefaultValidators             = true
+  coerceDate                       = true
+  writeNullishInModelTypes         = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Template {
+  id Int @id
+
+  createdAt DateTime @default(now())
+
+  template String @db.Text
+  script   String @db.Text
+  style    String @db.Text
+}
+
+model Binding {
+  id Int @id
+
+  createdAt DateTime @default(now())
+
+  payload Json
+}

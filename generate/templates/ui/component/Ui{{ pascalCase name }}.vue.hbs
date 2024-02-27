@@ -1,0 +1,19 @@
+<script setup lang="ts">
+  import { Ui{{ pascalCase name }}Props } from './Ui{{ pascalCase name }}Props';
+
+  defineProps<Ui{{ pascalCase name }}Props>();
+</script>
+
+<template>
+  <div :class="$style.root">
+    <slot />
+  </div>
+</template>
+
+<style lang="scss" module>
+  @import "@/shared/ui/assets/utils";
+
+  .root {
+
+  }
+</style>
