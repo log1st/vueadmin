@@ -1,5 +1,7 @@
-import type { Binding } from "@vueadmin/backend";
+import { Binding, Template } from "@vueadmin/backend";
 
 export type ComponentEditorProps = {
-  modelValue?: Binding;
+  binding?: Binding;
+  template?: Template;
+  loading?: boolean;
 };

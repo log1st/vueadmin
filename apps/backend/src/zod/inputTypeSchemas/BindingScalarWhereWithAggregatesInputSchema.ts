@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { IntWithAggregatesFilterSchema } from "./IntWithAggregatesFilterSchema";
 import { DateTimeWithAggregatesFilterSchema } from "./DateTimeWithAggregatesFilterSchema";
-import { JsonWithAggregatesFilterSchema } from "./JsonWithAggregatesFilterSchema";
+import { StringWithAggregatesFilterSchema } from "./StringWithAggregatesFilterSchema";
 
 export const BindingScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.BindingScalarWhereWithAggregatesInput> =
   z
@@ -33,7 +33,9 @@ export const BindingScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Bindi
           z.coerce.date(),
         ])
         .optional(),
-      payload: z.lazy(() => JsonWithAggregatesFilterSchema).optional(),
+      payload: z
+        .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
+        .optional(),
     })
     .strict();
 

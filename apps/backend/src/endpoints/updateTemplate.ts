@@ -1,15 +1,15 @@
-import { TemplateCreateInputSchema, TemplateSchema } from "../zod";
+import { TemplateSchema } from "../zod";
 import { trpc } from "../trpc";
 import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const updateTemplate = trpc.procedure
-  .input(TemplateCreateInputSchema)
+  .input(TemplateSchema.pick({ style: true, template: true }))
   .output(TemplateSchema)
-  .query(({ ctx, input }) =>
+  .mutation(({ ctx, input }) =>
     ctx.prisma.template.create({
       data: input,
     }),
   );
 
-export type UpdateBindingInput = AppRouterInputs["updateTemplate"];
-export type UpdateBindingOutput = AppRouterOutputs["updateTemplate"];
+export type UpdateTemplateInput = AppRouterInputs["updateTemplate"];
+export type UpdateTemplateOutput = AppRouterOutputs["updateTemplate"];

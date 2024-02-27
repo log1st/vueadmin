@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { BindingWhereInputSchema } from "./BindingWhereInputSchema";
 import { DateTimeFilterSchema } from "./DateTimeFilterSchema";
-import { JsonFilterSchema } from "./JsonFilterSchema";
+import { StringFilterSchema } from "./StringFilterSchema";
 
 export const BindingWhereUniqueInputSchema: z.ZodType<Prisma.BindingWhereUniqueInput> =
   z
@@ -33,7 +33,9 @@ export const BindingWhereUniqueInputSchema: z.ZodType<Prisma.BindingWhereUniqueI
           createdAt: z
             .union([z.lazy(() => DateTimeFilterSchema), z.coerce.date()])
             .optional(),
-          payload: z.lazy(() => JsonFilterSchema).optional(),
+          payload: z
+            .union([z.lazy(() => StringFilterSchema), z.string()])
+            .optional(),
         })
         .strict(),
     );

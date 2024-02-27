@@ -11,11 +11,20 @@ export const initApp = () => {
   app.use(pinia);
   app.use(i18n);
   app.use(router);
-  app.use(VueQueryPlugin);
+  app.use(VueQueryPlugin, {
+    queryClientConfig: {
+      defaultOptions: {
+        queries: {
+          retry: false,
+        },
+      },
+    },
+  });
 
   return {
     app,
     pinia,
     i18n,
+    router,
   };
 };

@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { JsonValueSchema } from "../inputTypeSchemas/JsonValueSchema";
 
 /// //////////////////////////////////////
 // BINDING SCHEMA
@@ -8,7 +7,7 @@ import { JsonValueSchema } from "../inputTypeSchemas/JsonValueSchema";
 export const BindingSchema = z.object({
   id: z.number().int(),
   createdAt: z.coerce.date(),
-  payload: JsonValueSchema.nullable(),
+  payload: z.string(),
 });
 
 export type Binding = z.infer<typeof BindingSchema>;
@@ -27,6 +26,7 @@ export type BindingPartial = z.infer<typeof BindingPartialSchema>;
 
 export const BindingOptionalDefaultsSchema = BindingSchema.merge(
   z.object({
+    id: z.number().int().optional(),
     createdAt: z.coerce.date().optional(),
   }),
 );

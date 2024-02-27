@@ -3,8 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { z } from "zod";
 import { IntFieldUpdateOperationsInputSchema } from "./IntFieldUpdateOperationsInputSchema";
 import { DateTimeFieldUpdateOperationsInputSchema } from "./DateTimeFieldUpdateOperationsInputSchema";
-import { JsonNullValueInputSchema } from "./JsonNullValueInputSchema";
-import { InputJsonValueSchema } from "./InputJsonValueSchema";
+import { StringFieldUpdateOperationsInputSchema } from "./StringFieldUpdateOperationsInputSchema";
 
 export const BindingUncheckedUpdateInputSchema: z.ZodType<Prisma.BindingUncheckedUpdateInput> =
   z
@@ -22,7 +21,10 @@ export const BindingUncheckedUpdateInputSchema: z.ZodType<Prisma.BindingUnchecke
         ])
         .optional(),
       payload: z
-        .union([z.lazy(() => JsonNullValueInputSchema), InputJsonValueSchema])
+        .union([
+          z.string(),
+          z.lazy(() => StringFieldUpdateOperationsInputSchema),
+        ])
         .optional(),
     })
     .strict();

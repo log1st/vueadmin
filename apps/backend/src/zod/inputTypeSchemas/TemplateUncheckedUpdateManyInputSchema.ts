@@ -26,12 +26,6 @@ export const TemplateUncheckedUpdateManyInputSchema: z.ZodType<Prisma.TemplateUn
           z.lazy(() => StringFieldUpdateOperationsInputSchema),
         ])
         .optional(),
-      script: z
-        .union([
-          z.string(),
-          z.lazy(() => StringFieldUpdateOperationsInputSchema),
-        ])
-        .optional(),
       style: z
         .union([
           z.string(),

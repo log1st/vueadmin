@@ -5,10 +5,9 @@ import { z } from "zod";
 export const TemplateUncheckedCreateInputSchema: z.ZodType<Prisma.TemplateUncheckedCreateInput> =
   z
     .object({
-      id: z.number().int(),
+      id: z.number().int().optional(),
       createdAt: z.coerce.date().optional(),
       template: z.string(),
-      script: z.string(),
       style: z.string(),
     })
     .strict();

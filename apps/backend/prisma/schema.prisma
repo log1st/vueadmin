@@ -28,19 +28,18 @@ datasource db {
 }
 
 model Template {
-  id Int @id
+  id Int @id @default(autoincrement())
 
   createdAt DateTime @default(now())
 
   template String @db.Text
-  script   String @db.Text
   style    String @db.Text
 }
 
 model Binding {
-  id Int @id
+  id Int @id @default(autoincrement())
 
   createdAt DateTime @default(now())
 
-  payload Json
+  payload String @db.Text
 }

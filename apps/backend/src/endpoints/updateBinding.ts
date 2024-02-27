@@ -1,11 +1,15 @@
 import { trpc } from "../trpc";
-import { BindingCreateInputSchema, BindingSchema } from "../zod";
+import { BindingSchema } from "../zod";
 import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const updateBinding = trpc.procedure
-  .input(BindingCreateInputSchema)
+  .input(
+    BindingSchema.pick({
+      payload: true,
+    }),
+  )
   .output(BindingSchema)
-  .query(({ ctx, input }) =>
+  .mutation(({ ctx, input }) =>
     ctx.prisma.binding.create({
       data: input,
     }),

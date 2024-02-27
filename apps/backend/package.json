@@ -6,7 +6,8 @@
   "scripts": {
     "start": "bun scripts/start.ts",
     "dev": "bun --hot scripts/start.ts",
-    "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives",
+    "check": "tsc",
+    "lint": "bun run check && eslint . --fix --ext ts,tsx --report-unused-disable-directives",
     "prisma": "bun x prisma"
   },
   "devDependencies": {

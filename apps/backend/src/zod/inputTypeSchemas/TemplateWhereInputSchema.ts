@@ -30,7 +30,6 @@ export const TemplateWhereInputSchema: z.ZodType<Prisma.TemplateWhereInput> = z
     template: z
       .union([z.lazy(() => StringFilterSchema), z.string()])
       .optional(),
-    script: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
     style: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
   })
   .strict();

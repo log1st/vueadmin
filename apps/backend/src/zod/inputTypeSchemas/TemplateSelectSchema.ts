@@ -6,7 +6,6 @@ export const TemplateSelectSchema: z.ZodType<Prisma.TemplateSelect> = z
     id: z.boolean().optional(),
     createdAt: z.boolean().optional(),
     template: z.boolean().optional(),
-    script: z.boolean().optional(),
     style: z.boolean().optional(),
   })
   .strict();

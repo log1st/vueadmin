@@ -36,9 +36,6 @@ export const TemplateScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Temp
       template: z
         .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
         .optional(),
-      script: z
-        .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
-        .optional(),
       style: z
         .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
         .optional(),

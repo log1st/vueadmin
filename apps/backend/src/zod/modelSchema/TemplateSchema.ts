@@ -8,7 +8,6 @@ export const TemplateSchema = z.object({
   id: z.number().int(),
   createdAt: z.coerce.date(),
   template: z.string(),
-  script: z.string(),
   style: z.string(),
 });
 
@@ -28,6 +27,7 @@ export type TemplatePartial = z.infer<typeof TemplatePartialSchema>;
 
 export const TemplateOptionalDefaultsSchema = TemplateSchema.merge(
   z.object({
+    id: z.number().int().optional(),
     createdAt: z.coerce.date().optional(),
   }),
 );

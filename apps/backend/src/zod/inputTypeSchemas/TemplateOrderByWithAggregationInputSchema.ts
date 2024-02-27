@@ -14,7 +14,6 @@ export const TemplateOrderByWithAggregationInputSchema: z.ZodType<Prisma.Templat
       id: z.lazy(() => SortOrderSchema).optional(),
       createdAt: z.lazy(() => SortOrderSchema).optional(),
       template: z.lazy(() => SortOrderSchema).optional(),
-      script: z.lazy(() => SortOrderSchema).optional(),
       style: z.lazy(() => SortOrderSchema).optional(),
       _count: z.lazy(() => TemplateCountOrderByAggregateInputSchema).optional(),
       _avg: z.lazy(() => TemplateAvgOrderByAggregateInputSchema).optional(),

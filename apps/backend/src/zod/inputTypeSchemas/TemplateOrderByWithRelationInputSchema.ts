@@ -9,7 +9,6 @@ export const TemplateOrderByWithRelationInputSchema: z.ZodType<Prisma.TemplateOr
       id: z.lazy(() => SortOrderSchema).optional(),
       createdAt: z.lazy(() => SortOrderSchema).optional(),
       template: z.lazy(() => SortOrderSchema).optional(),
-      script: z.lazy(() => SortOrderSchema).optional(),
       style: z.lazy(() => SortOrderSchema).optional(),
     })
     .strict();

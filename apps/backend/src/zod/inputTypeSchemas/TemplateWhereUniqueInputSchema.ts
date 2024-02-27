@@ -36,9 +36,6 @@ export const TemplateWhereUniqueInputSchema: z.ZodType<Prisma.TemplateWhereUniqu
           template: z
             .union([z.lazy(() => StringFilterSchema), z.string()])
             .optional(),
-          script: z
-            .union([z.lazy(() => StringFilterSchema), z.string()])
-            .optional(),
           style: z
             .union([z.lazy(() => StringFilterSchema), z.string()])
             .optional(),

@@ -4,7 +4,6 @@ export const TemplateScalarFieldEnumSchema = z.enum([
   "id",
   "createdAt",
   "template",
-  "script",
   "style",
 ]);
 

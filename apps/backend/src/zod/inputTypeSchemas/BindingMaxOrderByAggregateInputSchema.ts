@@ -8,6 +8,7 @@ export const BindingMaxOrderByAggregateInputSchema: z.ZodType<Prisma.BindingMaxO
     .object({
       id: z.lazy(() => SortOrderSchema).optional(),
       createdAt: z.lazy(() => SortOrderSchema).optional(),
+      payload: z.lazy(() => SortOrderSchema).optional(),
     })
     .strict();
 
