@@ -1,1 +1,3 @@
-export type UiIndexPageProps = {};
+export type UiIndexPageProps = {
+  title?: string;
+};

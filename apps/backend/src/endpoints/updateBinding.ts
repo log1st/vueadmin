@@ -1,6 +1,6 @@
-import { trpc } from "@/trpc.ts";
-import type { AppRouterInputs, AppRouterOutputs } from "@/appRouter.ts";
-import { BindingCreateInputSchema, BindingSchema } from "@/zod";
+import { trpc } from "../trpc";
+import { BindingCreateInputSchema, BindingSchema } from "../zod";
+import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const updateBinding = trpc.procedure
   .input(BindingCreateInputSchema)

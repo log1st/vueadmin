@@ -5,3 +5,7 @@
   line-height: rm($lh);
   letter-spacing: rm($ls);
 }
+
+@mixin text-label() {
+  @include t("Inter", 14, 21);
+}

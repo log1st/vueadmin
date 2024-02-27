@@ -1,6 +1,6 @@
-import { trpc } from "@/trpc.ts";
-import type { AppRouterInputs, AppRouterOutputs } from "@/appRouter.ts";
-import { TemplateCreateInputSchema, TemplateSchema } from "@/zod";
+import { TemplateCreateInputSchema, TemplateSchema } from "../zod";
+import { trpc } from "../trpc";
+import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const updateTemplate = trpc.procedure
   .input(TemplateCreateInputSchema)

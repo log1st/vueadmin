@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const { apiUrl } = z
   .object({
@@ -6,4 +6,5 @@ export const { apiUrl } = z
   })
   .transform((e) => ({
     apiUrl: e.VITE_APP_BACKEND_URL,
-  })).parse(import.meta.env);
+  }))
+  .parse(import.meta.env);

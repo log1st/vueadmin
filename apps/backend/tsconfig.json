@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     // Enable latest features
     "lib": ["ESNext"],
     "target": "ESNext",
@@ -24,12 +23,10 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "types": [
       "bun-types",
       "@total-typescript/ts-reset"
     ]
-  }
+  },
+  "include": ["src", "index.ts"]
 }

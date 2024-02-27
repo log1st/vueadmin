@@ -1,3 +1,3 @@
-// created from 'create-ts-index' 2024-02-27 21:53
+// created from 'create-ts-index' 2024-02-27 22:51
 
-export * from './AppRoot';
+export * from "./AppRoot";

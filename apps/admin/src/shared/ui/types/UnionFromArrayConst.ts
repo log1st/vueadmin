@@ -1,1 +1,2 @@
-export type UnionFromArrayConst<Entity extends readonly unknown[]> = Entity[number];
+export type UnionFromArrayConst<Entity extends readonly unknown[]> =
+  Entity[number];

@@ -4,7 +4,7 @@
     "airbnb-base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -15,16 +15,19 @@
     "import/extensions": [0],
     "import/no-unresolved": [0],
     "no-nested-ternary": [0],
-    "quotes": [1, "double"],
-    "import/no-cycle": [0]
+    "quotes": [1, "double"]
   },
   "overrides": [
     {
       "files": ["*.vue"],
       "extends": [
-        "plugin:vue/vue3-recommended",
-        "@vue/eslint-config-airbnb-with-typescript"
-      ]
+        "plugin:vue/vue3-recommended"
+      ],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "sourceType": "module"
+      }
     }
   ]
 }

@@ -18,6 +18,9 @@ defineProps<UiRootLayoutProps>();
   display: flex;
   flex-direction: column;
   min-block-size: 100dvh;
+  padding: rm(100) rm(40);
+
+  font: 400 16px Inter, sans-serif;
 
   background-image: paint(dot-grid);
   --dot-size: #{rm(1)};

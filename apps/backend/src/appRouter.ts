@@ -1,9 +1,9 @@
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
-import { binding } from "@/endpoints/binding.ts";
-import { trpc } from "@/trpc.ts";
-import { updateBinding } from "@/endpoints/updateBinding.ts";
-import { template } from "@/endpoints/template.ts";
-import { updateTemplate } from "@/endpoints/updateTemplate.ts";
+import { trpc } from "./trpc";
+import { binding } from "./endpoints/binding";
+import { updateBinding } from "./endpoints/updateBinding";
+import { template } from "./endpoints/template";
+import { updateTemplate } from "./endpoints/updateTemplate";
 
 const appRouter = trpc.router({
   binding,

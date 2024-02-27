@@ -1,6 +1,6 @@
-import { trpc } from "@/trpc.ts";
-import type { AppRouterInputs, AppRouterOutputs } from "@/appRouter.ts";
-import { BindingSchema } from "@/zod";
+import { trpc } from "../trpc";
+import { BindingSchema } from "../zod";
+import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const binding = trpc.procedure.output(BindingSchema).query(({ ctx }) =>
   ctx.prisma.binding.findFirstOrThrow({

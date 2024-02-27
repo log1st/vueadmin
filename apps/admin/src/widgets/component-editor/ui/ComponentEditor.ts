@@ -1,5 +1,3 @@
-import ComponentEditor from './ComponentEditor.vue';
+import ComponentEditor from "./ComponentEditor.vue";
 
-export {
-  ComponentEditor,
-};
+export { ComponentEditor };

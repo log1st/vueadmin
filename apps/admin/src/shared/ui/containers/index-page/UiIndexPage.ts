@@ -1,5 +1,3 @@
-import UiIndexPage from './UiIndexPage.vue';
+import UiIndexPage from "./UiIndexPage.vue";
 
-export {
-  UiIndexPage,
-};
+export { UiIndexPage };

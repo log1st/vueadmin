@@ -1,8 +1,13 @@
-import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
-import { apiUrl } from '@/shared/env';
+import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import { AppRouter } from "@vueadmin/backend";
+import superjson from "superjson";
+import { apiUrl } from "@/shared/env";
 
-export const trpcClient = createTRPCProxyClient({
-  links: [httpBatchLink({
-    url: apiUrl,
-  })],
+export const trpcClient = createTRPCProxyClient<AppRouter>({
+  links: [
+    httpBatchLink({
+      url: apiUrl,
+      transformer: superjson,
+    }),
+  ],
 });

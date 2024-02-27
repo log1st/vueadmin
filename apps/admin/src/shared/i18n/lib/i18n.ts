@@ -1,7 +1,8 @@
-import { createI18n } from 'vue-i18n';
-import { messageCompiler } from './messageCompiler.ts';
+import { createI18n } from "vue-i18n";
+import { messageCompiler } from "./messageCompiler.ts";
+import ru from "../locales/ru.ts";
 
-export const fallbackLocale = 'en-US';
+export const fallbackLocale = "ru-RU";
 export const availableLocales = [fallbackLocale];
 
 export const i18n = createI18n({
@@ -10,4 +11,7 @@ export const i18n = createI18n({
   legacy: false,
   messageCompiler,
   availableLocales,
+  messages: {
+    "ru-RU": ru,
+  },
 });

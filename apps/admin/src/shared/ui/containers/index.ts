@@ -1,4 +1,4 @@
-// created from 'create-ts-index' 2024-02-27 21:53
+// created from 'create-ts-index' 2024-02-27 22:51
 
-export * from './index-page';
-export * from './root-layout';
+export * from "./index-page";
+export * from "./root-layout";

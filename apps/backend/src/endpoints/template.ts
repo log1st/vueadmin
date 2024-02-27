@@ -1,6 +1,6 @@
-import { trpc } from "@/trpc.ts";
-import type { AppRouterInputs, AppRouterOutputs } from "@/appRouter.ts";
-import { TemplateSchema } from "@/zod";
+import { trpc } from "../trpc";
+import { TemplateSchema } from "../zod";
+import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const template = trpc.procedure.output(TemplateSchema).query(({ ctx }) =>
   ctx.prisma.template.findFirstOrThrow({
