@@ -1,2 +1,2 @@
-export * from "./TemplateSchema";
-export * from "./BindingSchema";
+export * from './TemplateSchema';
+export * from './BindingSchema';
