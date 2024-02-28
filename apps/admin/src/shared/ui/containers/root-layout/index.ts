@@ -1,4 +1,4 @@
 // created from 'create-ts-index' 2024-02-28 16:15
 
-export * from './UiRootLayout';
-export * from './UiRootLayoutProps';
+export * from "./UiRootLayout";
+export * from "./UiRootLayoutProps";
