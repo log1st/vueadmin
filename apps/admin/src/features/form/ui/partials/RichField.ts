@@ -21,7 +21,7 @@ export const RichField = defineComponent({
         "onUpdate:modelValue": (newValue: unknown) => {
           setFieldValue(props.name, newValue);
         },
-        disabled: submitting.value,
+        disabled: submitting.value || node.props?.disabled,
       });
     };
   },

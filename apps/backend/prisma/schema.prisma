@@ -34,6 +34,7 @@ model Template {
 
   template String @db.Text
   style    String @db.Text
+  script   String @db.Text
 }
 
 model Binding {

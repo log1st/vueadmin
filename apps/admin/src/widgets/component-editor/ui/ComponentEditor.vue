@@ -14,6 +14,13 @@
           />
         </RichField>
       </template>
+      <template #script>
+        <RichField name="script">
+          <UiTextarea
+            :placeholder="t('componentEditor.field.script.placeholder')"
+          />
+        </RichField>
+      </template>
       <template #template>
         <RichField name="template">
           <UiTextarea
@@ -41,8 +48,7 @@ import { UiButton, UiComponentEditor, UiTextarea } from "@/shared/ui";
 import { ComponentEditorProps } from "./ComponentEditorProps.ts";
 import { RichForm, RichField, RichSubmit } from "@/features/form";
 import Preview from "@/entity/preview/ui/Preview.vue";
-import { useUpdateBinding } from "@/shared/api/api/binding/useUpdateBinding.ts";
-import { useUpdateTemplate } from "@/shared/api/api/template/useUpdateTemplate.ts";
+import { useUpdateBinding, useUpdateTemplate } from "@/shared/api";
 
 const { t } = useI18n();
 
@@ -52,6 +58,7 @@ const model = ref<Omit<UpdateBindingInput & UpdateTemplateInput, "id">>({
   payload: "",
   template: "",
   style: "",
+  script: "",
 });
 
 watchEffect(() => {
@@ -66,6 +73,7 @@ watchEffect(() => {
       `.red {
   color: red;
 }`,
+    script: props.template?.script ?? "",
   };
 });
 

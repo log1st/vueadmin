@@ -13,6 +13,9 @@ export default {
       style: {
         placeholder: "Style",
       },
+      script: {
+        placeholder: "Style",
+      },
     },
   },
 };

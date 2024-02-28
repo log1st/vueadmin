@@ -45,5 +45,7 @@ const [value] = useValue(props, "modelValue", emit);
 
 .disabled {
   filter: grayscale(1);
+
+  opacity: .6;
 }
 </style>

@@ -24,7 +24,7 @@
     "@trpc/server": "next",
     "superjson": "^2.2.1",
     "lodash-es": "^4.17.21",
-    "v-runtime-template": "^1.10.0"
+    "vue3-sfc-loader": "^0.9.5"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",

@@ -1,8 +1,5 @@
 import { computed, Ref } from "vue";
-import {
-  DataIndex,
-  useRichFormContext,
-} from "@/features/form/lib/RichFormContext.ts";
+import { DataIndex, useRichFormContext } from "@/features/form";
 
 export const useField = (field: Ref<DataIndex>) => {
   const { getFieldValue, setFieldValue } = useRichFormContext();

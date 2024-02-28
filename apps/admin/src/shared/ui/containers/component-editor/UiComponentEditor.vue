@@ -8,6 +8,9 @@
         <div :class="$style.style">
           <slot name="style"></slot>
         </div>
+        <div :class="$style.script">
+          <slot name="script"></slot>
+        </div>
       </div>
       <div :class="$style.content">
         <div :class="$style.preview">
@@ -54,7 +57,8 @@
 }
 
 .template,
-.style {
+.style,
+.script{
   resize: vertical;
   overflow: auto;
   flex-grow: 1;

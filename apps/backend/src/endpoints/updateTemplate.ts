@@ -3,7 +3,7 @@ import { trpc } from "../trpc";
 import type { AppRouterInputs, AppRouterOutputs } from "../appRouter";
 
 export const updateTemplate = trpc.procedure
-  .input(TemplateSchema.pick({ style: true, template: true }))
+  .input(TemplateSchema.pick({ style: true, template: true, script: true }))
   .output(TemplateSchema)
   .mutation(({ ctx, input }) =>
     ctx.prisma.template.create({

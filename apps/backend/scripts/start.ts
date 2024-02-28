@@ -3,7 +3,25 @@ import cors from "@elysiajs/cors";
 import { trpc } from "@elysiajs/trpc";
 import { PrismaClient } from "@prisma/client";
 import { HOST, PORT } from "../src/env";
-import { appRouter } from "../src/appRouter";
+import { appRouter, createAppCaller } from "../src/appRouter";
+
+const prisma = new PrismaClient();
+
+const caller = createAppCaller({
+  prisma,
+});
+
+async function getSfc() {
+  const template = await caller.template();
+
+  return `
+      <template>${template.template}</template>
+      
+      <script lang="ts" setup>${template.script}</script>
+      
+      <style scoped>${template.style}</style>
+    `;
+}
 
 const app = new Elysia()
   .use(cors())
@@ -11,10 +29,18 @@ const app = new Elysia()
     trpc(appRouter, {
       endpoint: "",
       createContext: () => ({
-        prisma: new PrismaClient(),
+        prisma,
       }),
     }),
   )
+  .get("/sfc", async ({ set }) => {
+    Object.assign(set.headers, {
+      "Content-Type": "text/plain",
+      "Content-Disposition": 'attachment; filename="Component.vue"',
+    });
+
+    return getSfc();
+  })
   .listen({
     port: PORT,
     hostname: HOST,

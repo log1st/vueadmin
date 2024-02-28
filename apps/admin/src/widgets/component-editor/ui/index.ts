@@ -1,4 +1,4 @@
-// created from 'create-ts-index' 2024-02-28 02:43
+// created from 'create-ts-index' 2024-02-28 16:15
 
-export * from "./ComponentEditor";
-export * from "./ComponentEditorProps";
+export * from './ComponentEditor';
+export * from './ComponentEditorProps';

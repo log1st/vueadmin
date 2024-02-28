@@ -1,18 +1,28 @@
 <template>
-  <template v-if="binding && template">
-    <Preview
-      :style="template.style"
-      :template="template.template"
-      :payload="binding.payload"
-    />
-  </template>
-  <template v-else> Loading... </template>
+  <LoadedComponent v-if="payload" v-bind="payload" />
 </template>
 
 <script setup lang="ts">
-import { useBinding, useTemplate } from "@/shared/api";
-import { Preview } from "@/entities/preview";
+import { computed, defineAsyncComponent, defineComponent, h } from "vue";
+import { useBinding } from "@/shared/api";
 
 const { data: binding } = useBinding();
-const { data: template } = useTemplate();
+
+const payload = computed<any>(() =>
+  binding.value?.payload ? JSON.parse(binding.value?.payload) : null,
+);
+
+const LoadedComponent = defineAsyncComponent({
+  loader: () => import("@/pages/component/ui/Component.vue"),
+  errorComponent: defineComponent({
+    render() {
+      return h("div", {}, "Error");
+    },
+  }),
+  loadingComponent: defineComponent({
+    render() {
+      return h("div", {}, "Loading");
+    },
+  }),
+});
 </script>
