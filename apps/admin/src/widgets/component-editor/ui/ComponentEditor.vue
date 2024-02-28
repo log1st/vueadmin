@@ -73,7 +73,20 @@ watchEffect(() => {
       `.red {
   color: red;
 }`,
-    script: props.template?.script ?? "",
+    script:
+      props.template?.script ??
+      `
+import {watchEffect, onMounted} from "vue";
+
+const props = defineProps<{
+  count: number;
+  multiplier: number;
+}>();
+
+watchEffect(() => {
+  console.log(props.count);
+})
+    `,
   };
 });
 
